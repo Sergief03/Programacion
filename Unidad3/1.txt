@@ -1,0 +1,4 @@
+Dni: 1
+Nombre: 3424
+Direccion: 234234
+Telefono alumno: 42432

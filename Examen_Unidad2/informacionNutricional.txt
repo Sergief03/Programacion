@@ -1,0 +1,4 @@
+Azúcar: 1
+Proteínas: 22
+Grasas: 6
+Fibra: 2
