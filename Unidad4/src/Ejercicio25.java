@@ -31,7 +31,6 @@ public class Ejercicio25 {
                 }
             }
 
-
             if (todasAdivinadas) {
                 System.out.println("¡Ganaste! La palabra era: " + palabra);
                 vidas = 0;
@@ -55,7 +54,6 @@ public class Ejercicio25 {
                 if (!letraCorrecta) {
                     vidas--;
                 }
-
 
                 if (vidas == 0) {
                     System.out.println("Perdiste. La palabra era: " + palabra);
