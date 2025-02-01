@@ -1,6 +1,5 @@
 package tema5.ejercicio16;
 
-
 public class DniMejorado {
     private int numero;
     private char letra;
