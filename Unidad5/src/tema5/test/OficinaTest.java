@@ -1,6 +1,5 @@
 package tema5.test;
 
-import com.sun.jdi.connect.Connector;
 import org.junit.Test;
 import tema5.Ejercicio5.Oficina;
 
@@ -40,11 +39,10 @@ public class OficinaTest {
     public void test4(){
         Oficina oficina=new Oficina("HP",3);
         assertEquals(22222222,oficina.trabajadores.get(1).dni.numero);
-        assertEquals('J',oficina.trabajadores.get(1).dni.letra);
+        assertEquals('J', oficina.trabajadores.get(1).dni.letra);
         assertEquals(1000,oficina.trabajadores.get(1).sueldo,0.001);
         assertEquals(33333333,oficina.trabajadores.get(2).dni.numero);
         assertEquals('P',oficina.trabajadores.get(2).dni.letra);
         assertEquals(1200,oficina.trabajadores.get(2).sueldo,0.001);
     }
-
 }

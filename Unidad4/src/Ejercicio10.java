@@ -69,9 +69,5 @@ public class Ejercicio10 {
                 capaTexto.cls();
             }
         }
-
-
-
-
     }
 }
