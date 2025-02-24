@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="89c36913-d5b2-4581-8260-b827058d75d0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Unidad5/src/tema5/ejercicio18/MarcadorBaloncesto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Unidad5/src/tema5/ejercicio18/MarcadorBaloncestoTestEj18.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Unidad5/src/tema5/ejercicio19/Dni.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Unidad5/src/tema5/ejercicio19/Oficina.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Unidad5/src/tema5/ejercicio19/Persona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Unidad5/src/tema5/ejercicio20/CuentaCorriente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Unidad5/src/tema5/test/CuentaCorrienteTestEj20.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Unidad5/src/tema5/test/OficinaTestEj17.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Unidad5/src/tema5/test/OficinaTestEj19.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unidad5/Unidad5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Unidad5/Unidad5.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Sergief03"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Sergief03/Programacion.git",
+    "accountId": "a4542f0b-4790-4603-8f7a-9f394ece913c"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2sWS8JpElq3FqqjOTL5UET7u49C" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Escritorio/HundirLaFlota",
+    "onboarding.tips.debug.path": "C:/Users/sergi/IdeaProjects/HundirLaFlota/src/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="89c36913-d5b2-4581-8260-b827058d75d0" name="Changes" comment="" />
+      <created>1738569677845</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1738569677845</updated>
+    </task>
+    <servers />
+  </component>
+</project>
