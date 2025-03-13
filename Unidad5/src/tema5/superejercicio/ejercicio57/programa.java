@@ -4,13 +4,15 @@ import tema5.superejercicio.ejercicio50.Estado;
 import tema5.superejercicio.ejercicio51.Titulo;
 import tema5.superejercicio.ejercicio52.CatalogoTitulos;
 import tema5.superejercicio.ejercicio54.CatalogoTitulosArchivo;
+import tema5.superejercicio.ejercicio55.TipoCatalogo;
+import tema5.superejercicio.ejercicio56.CatalogoTitulosFactory;
 
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class programa {
     public static void main(String[] args) {
-        CatalogoTitulos catalogoTitulos=new CatalogoTitulosArchivo("titulos.csv");
+        CatalogoTitulos catalogoTitulos= CatalogoTitulosFactory.getCatalogoTitulos(TipoCatalogo.ARCHIVO);
         boolean continuar=true;
         while (continuar){
             System.out.println("""

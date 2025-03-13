@@ -73,8 +73,7 @@ public class CatalogoTitulosArchivo implements CatalogoTitulos {
 
     @Override
     public boolean añadirTitulo(String dni, String nombre, String estudio, Estado estado) {
-        this.titulos.add(new TituloArchivo(dni,nombre,estudio,estado));
-        return true;
+        return this.titulos.add(new TituloArchivo(dni,nombre,estudio,estado));
     }
 }
 
