@@ -42,8 +42,6 @@ public class EquipoFutbol implements Nombrable{
                 throw new IllegalArgumentException("El equipo no puede tener más de 25 futbolistas.");
             }
         }
-
-        // Si no se lanza ninguna excepción, añadir el empleado a la lista
         this.empleados.add(e);
     }
 
@@ -67,7 +65,11 @@ public class EquipoFutbol implements Nombrable{
                presupuesto-=presupuesto/totalEmpleados;
            }else {
 
-               e.cobrar(sueldo);
+               try {
+                   e.cobrar(sueldo);
+               } catch (CabreoException ex) {
+                   throw new RuntimeException(ex);
+               }
                presupuesto-=sueldo;
            }
            totalEmpleados--;
