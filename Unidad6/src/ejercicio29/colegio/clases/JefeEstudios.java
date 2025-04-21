@@ -12,14 +12,16 @@ public class JefeEstudios extends EmpleadoColegio{
     }
 
     public int getNumeroSuspensos(String asignatura){
-        return this.notasAsignaturas.get(asignatura)==null? 0:this.notasAsignaturas.get(asignatura);
+        Integer numSus=this.notasAsignaturas.get(asignatura);
+        if(numSus== null){ throw new IllegalArgumentException();}
+        return numSus;
     }
 
     @Override
     public void recibirCalificacion(Profesor p, Alumno a, Nota nota) {
         String asignatura=p.getAsignatura();
         int suspensos=this.notasAsignaturas.get(asignatura)==null? 0:this.notasAsignaturas.get(asignatura);
-        if (nota.valorNumerico()<5){
+        if (nota.getValoracion().esSuspenso()){
             this.notasAsignaturas.put(asignatura,suspensos+1);
         }
     }

@@ -12,89 +12,102 @@ public class ejercicio1 {
     }
 
     public static void main(String[] args) {
-        Runnable hola= () ->{
-            System.out.println("Hola mundo");
+        // Función pura: No tiene efectos secundarios, solo devuelve el valor calculado.
+        Runnable hola = () -> {
+            System.out.println("Hola mundo"); // Efecto secundario: salida por consola
         };
 
-        Function<Integer, Double> cuadrado= (Integer num) ->{
-            return Math.pow(num,2);
+// Función pura: Calcula el cuadrado de un número sin efectos secundarios.
+        Function<Integer, Double> cuadrado = (Integer num) -> {
+            return Math.pow(num, 2); // Pura, ya que solo realiza una operación matemática sin efectos secundarios.
         };
 
-        Runnable fecha=() ->{
-            System.out.println(LocalDate.now());
+// Función no pura: Tiene un efecto secundario al imprimir la fecha en la consola.
+        Runnable fecha = () -> {
+            System.out.println(LocalDate.now()); // Efecto secundario: salida por consola
         };
 
-        Predicate<List<Integer>> vacio= (List<Integer> lista) -> {
-            return lista.isEmpty();
+// Función pura: Solo verifica si la lista está vacía, sin modificar su estado.
+        Predicate<List<Integer>> vacio = (List<Integer> lista) -> {
+            return lista.isEmpty(); // Pura, ya que solo devuelve un valor booleano sin modificar el estado.
         };
 
-        Consumer<String> crearArchivo=(String ruta) ->{
-            File file=new File(ruta);
-            if (!file.exists()){
+// Función no pura: Crea un archivo en el sistema de archivos si no existe, efecto secundario de creación de archivo.
+        Consumer<String> crearArchivo = (String ruta) -> {
+            File file = new File(ruta);
+            if (!file.exists()) {
                 try {
-                    file.createNewFile();
+                    file.createNewFile(); // Efecto secundario: crea un archivo en el sistema de archivos
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
             }
         };
 
-        Function<String, Integer> numeroEscapcios=(String frase) ->{
-            int espacios=0;
-            for (int i=0;i<frase.length();i++){
-                if (frase.charAt(i)==' '){
+// Función pura: Cuenta la cantidad de espacios en una cadena sin efectos secundarios.
+        Function<String, Integer> numeroEscapcios = (String frase) -> {
+            int espacios = 0;
+            for (int i = 0; i < frase.length(); i++) {
+                if (frase.charAt(i) == ' ') {
                     espacios++;
                 }
             }
-            return espacios;
+            return espacios; // Pura, ya que solo cuenta los espacios sin efectos secundarios.
         };
 
-        BiFunction<Integer,Integer, Integer> maxNum=(Integer num1, Integer num2) ->{
-            return num1>num2? num1:num2;
+// Función pura: Devuelve el máximo de dos números sin efectos secundarios.
+        BiFunction<Integer, Integer, Integer> maxNum = (Integer num1, Integer num2) -> {
+            return num1 > num2 ? num1 : num2; // Pura, ya que solo devuelve un valor sin efectos secundarios.
         };
 
-        Function<Integer,Character> dni=(Integer n)->{
+// Función pura: Calcula la letra del DNI a partir del número sin efectos secundarios.
+        Function<Integer, Character> dni = (Integer n) -> {
             String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
-            return letras.charAt(n % 23);
+            return letras.charAt(n % 23); // Pura, ya que solo realiza un cálculo sin efectos secundarios.
         };
 
-        Predicate<Integer> mayorEdad=(Integer edad) ->{
-            return edad>=18;
+// Función pura: Verifica si una edad es mayor o igual a 18 sin modificar nada.
+        Predicate<Integer> mayorEdad = (Integer edad) -> {
+            return edad >= 18; // Pura, solo devuelve un valor booleano sin efectos secundarios.
         };
 
-        Function<String,Long> tamañoBytes=(String ruta) ->{
-            return  new File(ruta).length();
+// Función no pura: Obtiene el tamaño de un archivo en el sistema de archivos, tiene un efecto secundario.
+        Function<String, Long> tamañoBytes = (String ruta) -> {
+            return new File(ruta).length(); // Efecto secundario: consulta el sistema de archivos.
         };
 
-        Function<LocalDate,String> fechaString=(LocalDate ld) ->{
-            return ld.format(DateTimeFormatter.ofPattern("dd/MM/YYYY"));
+// Función pura: Convierte una fecha en un string con formato, sin efectos secundarios.
+        Function<LocalDate, String> fechaString = (LocalDate ld) -> {
+            return ld.format(DateTimeFormatter.ofPattern("dd/MM/YYYY")); // Pura, solo realiza un formato sin efectos secundarios.
         };
 
-        Predicate<Integer> esPrimo=(Integer n) ->{
-            boolean primo=true;
-            if (!(n<=1)){
-                for (int i=2;i<n;i++){
-                    if (n%i==0){
-                        primo=false;
+// Función pura: Verifica si un número es primo, sin efectos secundarios.
+        Predicate<Integer> esPrimo = (Integer n) -> {
+            boolean primo = true;
+            if (!(n <= 1)) {
+                for (int i = 2; i < n; i++) {
+                    if (n % i == 0) {
+                        primo = false;
                     }
                 }
-            }else {
-                primo=false;
+            } else {
+                primo = false;
             }
-
-            return primo;
+            return primo; // Pura, ya que solo calcula un valor booleano sin efectos secundarios.
         };
 
-        Runnable hora=() ->{
-            System.out.println(LocalTime.now());
+// Función no pura: Imprime la hora actual en consola, efecto secundario de salida por consola.
+        Runnable hora = () -> {
+            System.out.println(LocalTime.now()); // Efecto secundario: salida por consola
         };
 
-        Consumer<String> lineasArchivo=(String ruta)->{
+// Función no pura: Lee las líneas de un archivo y las imprime, tiene efectos secundarios de I/O.
+        Consumer<String> lineasArchivo = (String ruta) -> {
             try {
-                BufferedReader bufferedReader=new BufferedReader(new FileReader(ruta));
-                String linea="";
-                while ((linea=bufferedReader.readLine())!=null){
-                    System.out.println(linea);
+                BufferedReader bufferedReader = new BufferedReader(new FileReader(ruta));
+                String linea = "";
+                while ((linea = bufferedReader.readLine()) != null) {
+                    System.out.println(linea); // Efecto secundario: salida por consola
                 }
             } catch (FileNotFoundException e) {
                 throw new RuntimeException(e);
@@ -103,49 +116,56 @@ public class ejercicio1 {
             }
         };
 
-        Consumer<Integer> sleep=(Integer seg) ->{
+// Función no pura: Suspende el hilo durante un número de segundos, efecto secundario de ejecución de hilo.
+        Consumer<Integer> sleep = (Integer seg) -> {
             try {
-                Thread.sleep(seg*1000);
+                Thread.sleep(seg * 1000); // Efecto secundario: suspende el hilo durante el tiempo indicado
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
         };
 
-        Function<Character,Integer> ascii=(Character c)->{
-            return (int) c;
+// Función pura: Convierte un carácter en su valor ASCII, sin efectos secundarios.
+        Function<Character, Integer> ascii = (Character c) -> {
+            return (int) c; // Pura, ya que solo realiza una conversión sin efectos secundarios.
         };
 
-        BiPredicate<List<String>,String> contienePalabra=(List<String> lista, String palabra)->{
-            return lista.contains(palabra);
+// Función pura: Verifica si una lista contiene una palabra, sin efectos secundarios.
+        BiPredicate<List<String>, String> contienePalabra = (List<String> lista, String palabra) -> {
+            return lista.contains(palabra); // Pura, ya que solo devuelve un valor booleano sin efectos secundarios.
         };
 
+// Función no pura: Lanza una excepción si la ruta no es válida, tiene un efecto secundario de validación de archivo.
         Function<String, TipoElemento> tipoElemento = (String ruta) -> {
             File archivo = new File(ruta);
             if (!archivo.exists()) {
-                throw new IllegalArgumentException("La ruta no existe: " + ruta);
+                throw new IllegalArgumentException("La ruta no existe: " + ruta); // Efecto secundario: lanza una excepción
             }
             if (archivo.isFile()) {
                 return TipoElemento.ARCHIVO;
             } else if (archivo.isDirectory()) {
                 return TipoElemento.CARPETA;
             } else {
-                throw new IllegalArgumentException("La ruta no es ni un archivo ni una carpeta: " + ruta);
+                throw new IllegalArgumentException("La ruta no es ni un archivo ni una carpeta: " + ruta); // Efecto secundario: lanza una excepción
             }
         };
 
-        BiFunction<Integer,Integer,Integer> suma=(Integer num1, Integer num2)->{
-            int operacion=0;
-            for (int i=num1;i<=num2;i++){
-                operacion+=i;
+// Función pura: Suma los números entre dos valores, sin efectos secundarios.
+        BiFunction<Integer, Integer, Integer> suma = (Integer num1, Integer num2) -> {
+            int operacion = 0;
+            for (int i = num1; i <= num2; i++) {
+                operacion += i;
             }
-            return operacion;
+            return operacion; // Pura, ya que solo realiza un cálculo sin efectos secundarios.
         };
 
-        BiConsumer<List<String>,List<String>> copiar=(List<String> origen, List<String> destino)->{
-            for (String e:origen){
-                destino.add(e);
+// Función no pura: Copia elementos de una lista a otra, tiene efectos secundarios al modificar las listas.
+        BiConsumer<List<String>, List<String>> copiar = (List<String> origen, List<String> destino) -> {
+            for (String e : origen) {
+                destino.add(e); // Efecto secundario: modifica la lista destino
             }
         };
+
 
 
 

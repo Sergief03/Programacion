@@ -1,0 +1,4 @@
+Empleado: Juan Perez Sueldo: 1320.0
+Empleado: Antonio Castillo Sueldo: 1650.0000000000002
+Empleado: María López Sueldo: 1650.0000000000002
+Empleado: Luis Martínez Sueldo: 2200.0

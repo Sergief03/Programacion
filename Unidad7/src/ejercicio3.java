@@ -9,13 +9,13 @@ public class ejercicio3 {
     public static void main(String[] args) {
         Runnable hola= () -> System.out.println("Hola mundo");
 
-        Function<Integer, Double> cuadrado= ( num) -> Math.pow(num,2);
+        Function<Integer, Double> cuadrado=  num -> Math.pow(num,2);
 
         Runnable fecha=() -> System.out.println(LocalDate.now());;
 
-        Predicate<List<Integer>> vacio= ( lista) ->lista.isEmpty();
+        Predicate<List<Integer>> vacio=lista ->lista.isEmpty();
 
-        Consumer<String> crearArchivo=( ruta) ->{
+        Consumer<String> crearArchivo=ruta ->{
             File file=new File(ruta);
             if (!file.exists()){
                 try {
@@ -26,7 +26,7 @@ public class ejercicio3 {
             }
         };
 
-        Function<String, Integer> numeroEscapcios=( frase) ->{
+        Function<String, Integer> numeroEscapcios= frase ->{
             int espacios=0;
             for (int i=0;i<frase.length();i++){
                 if (frase.charAt(i)==' '){
@@ -38,18 +38,18 @@ public class ejercicio3 {
 
         BiFunction<Integer,Integer, Integer> maxNum=(num1,  num2) ->num1>num2? num1:num2;
 
-        Function<Integer,Character> dni=( n)->{
+        Function<Integer,Character> dni= n->{
             String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
             return letras.charAt(n % 23);
         };
 
-        Predicate<Integer> mayorEdad=( edad) ->edad>=18;
+        Predicate<Integer> mayorEdad=edad ->edad>=18;
 
-        Function<String,Long> tamañoBytes=(ruta) ->new File(ruta).length();
+        Function<String,Long> tamañoBytes=ruta ->new File(ruta).length();
 
-        Function<LocalDate,String> fechaString=( ld) ->ld.format(DateTimeFormatter.ofPattern("dd/MM/YYYY"));
+        Function<LocalDate,String> fechaString= ld ->ld.format(DateTimeFormatter.ofPattern("dd/MM/YYYY"));
 
-        Predicate<Integer> esPrimo=( n) ->{
+        Predicate<Integer> esPrimo= n ->{
             boolean primo=true;
             if (!(n<=1)){
                 for (int i=2;i<n;i++){
@@ -67,7 +67,7 @@ public class ejercicio3 {
         Runnable hora=() ->System.out.println(LocalTime.now());
 
 
-        Consumer<String> lineasArchivo=(ruta)->{
+        Consumer<String> lineasArchivo=ruta->{
             try {
                 BufferedReader bufferedReader=new BufferedReader(new FileReader(ruta));
                 String linea="";
@@ -81,7 +81,7 @@ public class ejercicio3 {
             }
         };
 
-        Consumer<Integer> sleep=( seg) ->{
+        Consumer<Integer> sleep= seg ->{
             try {
                 Thread.sleep(seg*1000);
             } catch (InterruptedException e) {
@@ -89,12 +89,12 @@ public class ejercicio3 {
             }
         };
 
-        Function<Character,Integer> ascii=( c)-> (int) c;
+        Function<Character,Integer> ascii= c-> (int) c;
 
 
         BiPredicate<List<String>,String> contienePalabra=( lista,  palabra)->lista.contains(palabra);
 
-        Function<String, ejercicio1.TipoElemento> tipoElemento = (ruta) -> {
+        Function<String, ejercicio1.TipoElemento> tipoElemento = ruta -> {
             File archivo = new File(ruta);
             if (!archivo.exists()) {
                 throw new IllegalArgumentException("La ruta no existe: " + ruta);
